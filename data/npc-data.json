@@ -1,0 +1,382 @@
+{
+  "project": "Pokemon Qbone - Pokéliga Edition",
+  "version": "1.0",
+  "last_updated": "2025-11-04",
+  "npcs": [
+    {
+      "id": "NPC_OLAF",
+      "name": "Olaf",
+      "name_no": "Olaf",
+      "age": 60,
+      "gender": "male",
+      "role": "mentor",
+      "sprite": "OBJ_EVENT_GFX_OLAF",
+      "personality": "friendly_wise_mentor",
+      "description": "En vennlig eldre nabo som har bodd i Vennesla hele livet. Han er kjent for sin kunnskap om Pokémon og naturen.",
+      "locations": [
+        {
+          "map": "MAP_VENNESLAVEGEN_276",
+          "x": 10,
+          "y": 8,
+          "movement": "MOVEMENT_TYPE_WANDER_AROUND",
+          "script": "VenneslavegOlaf_EventScript",
+          "time": "morning_afternoon"
+        },
+        {
+          "map": "MAP_VENNESLA_TOWN",
+          "x": 15,
+          "y": 12,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "VenneslaTownOlaf_EventScript",
+          "time": "evening"
+        }
+      ],
+      "dialog": {
+        "first_meeting": "Hei Preben! Så bra å se deg ute i frisk luft! Har du hørt om Pokémon? Fantastiske skapninger som lever i harmoni med naturen her i Vennesla.",
+        "tutorial": "La meg vise deg hvordan du fanger din første Pokémon. Det er enkelt når du først lærer det!",
+        "default": "Hvordan går det med Pokémon-treningen din? Husk, det viktigste er å behandle Pokémon med respekt.",
+        "after_gym1": "Gratulerer med seieren mot Kari! Jeg visste du hadde det i deg!",
+        "after_gym2": "Bjørn i Hunsfoss er en tøff motstander. Men jeg tror du er klar for utfordringen.",
+        "late_game": "Du har vokst så mye som trener, Preben. Jeg er stolt av deg!"
+      },
+      "gifts": [
+        {
+          "item": "ITEM_POTION",
+          "condition": "first_meeting",
+          "quantity": 5
+        },
+        {
+          "item": "ITEM_RUNNING_SHOES",
+          "condition": "after_first_gym",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "NPC_MOM",
+      "name": "Mom",
+      "name_no": "Mamma",
+      "age": 40,
+      "gender": "female",
+      "role": "mother",
+      "sprite": "OBJ_EVENT_GFX_MOM",
+      "personality": "caring_supportive",
+      "description": "Spillerens mor. Hun er støttende og omsorgsfull, og healer alltid Pokémon når spilleren er hjemme.",
+      "locations": [
+        {
+          "map": "MAP_VENNESLAVEGEN_276",
+          "x": 8,
+          "y": 5,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "PlayerHomeMom_EventScript",
+          "time": "all_day"
+        }
+      ],
+      "dialog": {
+        "morning": "God morgen, Preben! Har du spist frokost?",
+        "default": "Velkommen hjem! Vil du at jeg skal hele Pokémon dine?",
+        "heal": "La meg hele Pokémon dine. *Pokémon healed!*",
+        "after_heal": "Der ja! Pokémon dine er nå helt friske!",
+        "leaving": "Pass på deg der ute! Og kom gjerne innom når du trenger en pause."
+      },
+      "functions": [
+        "heal_pokemon",
+        "save_money"
+      ]
+    },
+    {
+      "id": "NPC_PROFESSOR_BJORK",
+      "name": "Professor Bjørk",
+      "name_no": "Professor Bjørk",
+      "age": 55,
+      "gender": "male",
+      "role": "professor",
+      "sprite": "OBJ_EVENT_GFX_PROFESSOR",
+      "personality": "intellectual_passionate",
+      "description": "Den lokale Pokémon-professoren. Han forsker på norske Pokémon-variasjoner og økologi.",
+      "locations": [
+        {
+          "map": "MAP_PROFESSOR_LAB",
+          "x": 10,
+          "y": 8,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "ProfessorBjork_EventScript",
+          "time": "all_day"
+        }
+      ],
+      "dialog": {
+        "first_meeting": "Velkommen til mitt laboratorium! Jeg er Professor Bjørk, og jeg forsker på Pokémon her i Vennesla-området.",
+        "starter_choice": "Nå må du velge din første Pokémon! Velg klokt, for dette vil være din partner gjennom hele eventyret.",
+        "after_starter": "Utmerket valg! Ta også denne Pokédex. Den vil registrere alle Pokémon du møter.",
+        "default": "Hvordan går det med Pokédex-en? Har du registrert mange Pokémon?",
+        "pokedex_milestone_25": "Imponerende! Du har registrert 25 Pokémon! Her, ta dette som belønning.",
+        "pokedex_milestone_50": "Fantastisk arbeid! 50 Pokémon registrert! Du er en sann forsker!",
+        "pokedex_complete": "Utrolig! Du har fullført Pokédex! Dette er en historisk prestasjon!"
+      },
+      "gifts": [
+        {
+          "item": "POKEMON_TREECKO",
+          "condition": "starter_choice_grass",
+          "quantity": 1
+        },
+        {
+          "item": "POKEMON_TORCHIC",
+          "condition": "starter_choice_fire",
+          "quantity": 1
+        },
+        {
+          "item": "POKEMON_MUDKIP",
+          "condition": "starter_choice_water",
+          "quantity": 1
+        },
+        {
+          "item": "ITEM_POKEDEX",
+          "condition": "after_starter",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "NPC_RIVAL_MAGNUS",
+      "name": "Magnus",
+      "name_no": "Magnus",
+      "age": 14,
+      "gender": "male",
+      "role": "rival",
+      "sprite": "OBJ_EVENT_GFX_RIVAL",
+      "personality": "competitive_friendly",
+      "description": "Spillerens barndomsvenn og rival. Han er konkurranselysten men vennlig, og vil alltid utfordre spilleren til å bli bedre.",
+      "locations": [
+        {
+          "map": "MAP_PROFESSOR_LAB",
+          "x": 8,
+          "y": 6,
+          "movement": "MOVEMENT_TYPE_FACE_UP",
+          "script": "RivalMagnus_FirstMeeting",
+          "time": "starter_event"
+        },
+        {
+          "map": "MAP_ROUTE_1",
+          "x": 20,
+          "y": 10,
+          "movement": "MOVEMENT_TYPE_FACE_LEFT",
+          "script": "RivalMagnus_Battle1",
+          "time": "after_starter"
+        }
+      ],
+      "dialog": {
+        "first_meeting": "Hei Preben! Jeg hørte at Professor Bjørk skal gi oss Pokémon i dag! Dette blir gøy!",
+        "before_battle_1": "Så, du fikk din første Pokémon? La oss se hvor sterk den er! Kom igjen, la oss kjempe!",
+        "after_battle_1_win": "Wow, du er sterkere enn jeg trodde! Men neste gang vinner jeg!",
+        "after_battle_1_lose": "Hehe, jeg vant! Men ikke vær lei deg, du blir bedre med øvelse!",
+        "before_battle_2": "Preben! Jeg har trent hardt siden sist. Denne gangen vinner jeg garantert!",
+        "default": "Hei Preben! Klar for en kamp?"
+      },
+      "battles": [
+        {
+          "id": "BATTLE_RIVAL_1",
+          "location": "MAP_ROUTE_1",
+          "condition": "after_starter",
+          "team": [
+            {
+              "species": "SPECIES_TREECKO",
+              "level": 5,
+              "if_player_chose": "SPECIES_TORCHIC"
+            },
+            {
+              "species": "SPECIES_TORCHIC",
+              "level": 5,
+              "if_player_chose": "SPECIES_MUDKIP"
+            },
+            {
+              "species": "SPECIES_MUDKIP",
+              "level": 5,
+              "if_player_chose": "SPECIES_TREECKO"
+            }
+          ]
+        },
+        {
+          "id": "BATTLE_RIVAL_2",
+          "location": "MAP_HUNSFOSS_TOWN",
+          "condition": "before_gym_2",
+          "team": [
+            {
+              "species": "SPECIES_GROVYLE",
+              "level": 15,
+              "if_player_chose": "SPECIES_TORCHIC"
+            },
+            {
+              "species": "SPECIES_COMBUSKEN",
+              "level": 15,
+              "if_player_chose": "SPECIES_MUDKIP"
+            },
+            {
+              "species": "SPECIES_MARSHTOMP",
+              "level": 15,
+              "if_player_chose": "SPECIES_TREECKO"
+            },
+            {
+              "species": "SPECIES_TAILLOW",
+              "level": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NPC_GYM_LEADER_KARI",
+      "name": "Kari",
+      "name_no": "Kari",
+      "age": 28,
+      "gender": "female",
+      "role": "gym_leader",
+      "sprite": "OBJ_EVENT_GFX_GYM_LEADER_KARI",
+      "personality": "friendly_strategic",
+      "type_specialty": "Normal",
+      "gym_number": 1,
+      "badge": "Vennesla Badge",
+      "description": "Gym Leader i Vennesla. Hun spesialiserer seg i Normal-type Pokémon og lærer trenere om allsidighet.",
+      "locations": [
+        {
+          "map": "MAP_VENNESLA_GYM",
+          "x": 10,
+          "y": 15,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "GymLeaderKari_EventScript",
+          "time": "all_day"
+        }
+      ],
+      "dialog": {
+        "before_battle": "Velkommen til Vennesla Gym! Jeg er Kari, Gym Leader her. Normal-type Pokémon er kanskje enkle, men de er utrolig allsidige. Vis meg hva du kan!",
+        "during_battle": "Ikke undervurder Normal-types!",
+        "after_loss": "Wow! Du er sterkere enn jeg trodde! Ta dette Vennesla Badge som bevis på seieren din!",
+        "after_win": "Du trenger mer trening. Kom tilbake når du er sterkere!",
+        "rematch": "Tilbake for en rematch? La oss se hvor mye du har vokst!"
+      },
+      "team": {
+        "first_battle": [
+          {
+            "species": "SPECIES_RATTATA",
+            "level": 8,
+            "moves": ["MOVE_TACKLE", "MOVE_TAIL_WHIP", "MOVE_QUICK_ATTACK"]
+          },
+          {
+            "species": "SPECIES_MEOWTH",
+            "level": 10,
+            "moves": ["MOVE_SCRATCH", "MOVE_GROWL", "MOVE_BITE", "MOVE_FAKE_OUT"]
+          }
+        ],
+        "rematch": [
+          {
+            "species": "SPECIES_RATICATE",
+            "level": 35,
+            "moves": ["MOVE_HYPER_FANG", "MOVE_QUICK_ATTACK", "MOVE_SUPER_FANG", "MOVE_PURSUIT"]
+          },
+          {
+            "species": "SPECIES_PERSIAN",
+            "level": 37,
+            "moves": ["MOVE_SLASH", "MOVE_BITE", "MOVE_FAKE_OUT", "MOVE_SCREECH"]
+          },
+          {
+            "species": "SPECIES_ZANGOOSE",
+            "level": 40,
+            "moves": ["MOVE_CRUSH_CLAW", "MOVE_SLASH", "MOVE_QUICK_ATTACK", "MOVE_SWORDS_DANCE"]
+          }
+        ]
+      },
+      "rewards": {
+        "badge": "BADGE_VENNESLA",
+        "tm": "TM_RETURN",
+        "prize_money": 1000
+      }
+    },
+    {
+      "id": "NPC_GYM_LEADER_BJORN",
+      "name": "Bjørn",
+      "name_no": "Bjørn",
+      "age": 45,
+      "gender": "male",
+      "role": "gym_leader",
+      "sprite": "OBJ_EVENT_GFX_GYM_LEADER_BJORN",
+      "personality": "tough_industrial",
+      "type_specialty": "Steel",
+      "gym_number": 2,
+      "badge": "Steel Badge",
+      "description": "Gym Leader i Hunsfoss. Han jobber på stålverket og spesialiserer seg i Steel-type Pokémon.",
+      "locations": [
+        {
+          "map": "MAP_HUNSFOSS_GYM",
+          "x": 10,
+          "y": 15,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "GymLeaderBjorn_EventScript",
+          "time": "all_day"
+        }
+      ],
+      "dialog": {
+        "before_battle": "Velkommen til Hunsfoss Gym! Jeg er Bjørn. Steel-type Pokémon er sterke og utholdende, akkurat som stål. Vis meg din styrke!",
+        "during_battle": "Stål bøyer seg ikke!",
+        "after_loss": "Imponerende! Din styrke har brutt gjennom mitt forsvar. Ta Steel Badge!",
+        "after_win": "Du er ikke sterk nok ennå. Tren mer og kom tilbake!",
+        "rematch": "Tilbake? Bra! La oss teste styrken din igjen!"
+      },
+      "team": {
+        "first_battle": [
+          {
+            "species": "SPECIES_MAGNEMITE",
+            "level": 16,
+            "moves": ["MOVE_THUNDER_SHOCK", "MOVE_SONIC_BOOM", "MOVE_THUNDER_WAVE"]
+          },
+          {
+            "species": "SPECIES_ARON",
+            "level": 18,
+            "moves": ["MOVE_METAL_CLAW", "MOVE_HEADBUTT", "MOVE_IRON_DEFENSE", "MOVE_ROAR"]
+          }
+        ]
+      },
+      "rewards": {
+        "badge": "BADGE_STEEL",
+        "tm": "TM_STEEL_WING",
+        "prize_money": 1800
+      }
+    },
+    {
+      "id": "NPC_NURSE_JOY",
+      "name": "Nurse Joy",
+      "name_no": "Sykepleier Joy",
+      "age": 25,
+      "gender": "female",
+      "role": "nurse",
+      "sprite": "OBJ_EVENT_GFX_NURSE",
+      "personality": "caring_professional",
+      "description": "Sykepleier ved PokéCenter. Hun healer Pokémon gratis.",
+      "locations": [
+        {
+          "map": "MAP_VENNESLA_POKECENTER",
+          "x": 8,
+          "y": 5,
+          "movement": "MOVEMENT_TYPE_FACE_DOWN",
+          "script": "NurseJoy_EventScript",
+          "time": "all_day"
+        }
+      ],
+      "dialog": {
+        "greeting": "Velkommen til PokéCenter! Vil du at jeg skal hele Pokémon dine?",
+        "healing": "Ok, jeg tar Pokémon dine for en liten stund.",
+        "healed": "Takk for at du ventet! Pokémon dine er nå helt friske!",
+        "goodbye": "Vi håper å se deg igjen!"
+      },
+      "functions": [
+        "heal_pokemon",
+        "pc_access"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_npcs": 7,
+    "gym_leaders": 2,
+    "rivals": 1,
+    "professors": 1,
+    "support_characters": 3
+  }
+}

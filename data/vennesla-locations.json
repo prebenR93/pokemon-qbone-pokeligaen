@@ -1,0 +1,406 @@
+{
+  "project": "Pokemon Qbone - Pokéliga Edition",
+  "region": "Vennesla",
+  "version": "1.0",
+  "last_updated": "2025-11-04",
+  "locations": [
+    {
+      "id": "LOC_VENNESLAVEGEN_276",
+      "name": "Venneslavegen 276",
+      "name_no": "Venneslavegen 276",
+      "type": "house",
+      "subtype": "player_home",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2794,
+          "lon": 7.9669
+        },
+        "game_world": {
+          "map_id": "MAP_VENNESLAVEGEN_276",
+          "x": 10,
+          "y": 8
+        }
+      },
+      "description": "Spillerens hjem. Et typisk norsk enebolig med moderne fasiliteter. Huset har to etasjer med stue, kjøkken og soverom.",
+      "features": [
+        "player_bedroom",
+        "parents_room",
+        "living_room",
+        "kitchen",
+        "tv_pc"
+      ],
+      "npcs": [
+        "NPC_MOM",
+        "NPC_OLAF"
+      ],
+      "items": [
+        "ITEM_POTION"
+      ],
+      "wild_pokemon": false,
+      "connections": [
+        {
+          "direction": "south",
+          "to": "LOC_VENNESLA_BY",
+          "distance": 500
+        }
+      ],
+      "music": "MUS_LITTLEROOT",
+      "weather": "WEATHER_RAIN"
+    },
+    {
+      "id": "LOC_VENNESLA_BY",
+      "name": "Vennesla By",
+      "name_no": "Vennesla sentrum",
+      "type": "town",
+      "subtype": "starter_town",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2756,
+          "lon": 7.9711
+        },
+        "game_world": {
+          "map_id": "MAP_VENNESLA_TOWN",
+          "x": 20,
+          "y": 15
+        }
+      },
+      "description": "Vennesla sentrum. En livlig by med PokéCenter, PokéMart og det første Gym. Hjemsted for mange trenere og Pokémon.",
+      "features": [
+        "pokecenter",
+        "pokemart",
+        "gym",
+        "library",
+        "bus_stop",
+        "professor_lab"
+      ],
+      "npcs": [
+        "NPC_NURSE_JOY",
+        "NPC_MART_CLERK",
+        "NPC_GYM_LEADER_KARI",
+        "NPC_PROFESSOR_BJORK"
+      ],
+      "gym": {
+        "number": 1,
+        "leader": "Kari",
+        "type": "Normal",
+        "badge": "Vennesla Badge"
+      },
+      "wild_pokemon": false,
+      "connections": [
+        {
+          "direction": "north",
+          "to": "LOC_VENNESLAVEGEN_276",
+          "distance": 500
+        },
+        {
+          "direction": "east",
+          "to": "LOC_ROUTE_1",
+          "distance": 200
+        },
+        {
+          "direction": "west",
+          "to": "LOC_HUNSFOSS",
+          "distance": 3000
+        }
+      ],
+      "music": "MUS_OLDALE",
+      "weather": "WEATHER_SUNNY"
+    },
+    {
+      "id": "LOC_ROUTE_1",
+      "name": "Route 1",
+      "name_no": "Rute 1 - Vennesla Utmark",
+      "type": "route",
+      "subtype": "grass_route",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2770,
+          "lon": 7.9800
+        },
+        "game_world": {
+          "map_id": "MAP_ROUTE_1",
+          "x": 25,
+          "y": 15
+        }
+      },
+      "description": "En fredelig rute øst for Vennesla sentrum. Gress og trær dominerer landskapet. Perfekt for nybegynnere å trene sine første Pokémon.",
+      "features": [
+        "tall_grass",
+        "trainers",
+        "items"
+      ],
+      "trainers": [
+        {
+          "name": "Yngling Ola",
+          "class": "Youngster",
+          "pokemon": ["Rattata", "Pidgey"]
+        },
+        {
+          "name": "Jente Lisa",
+          "class": "Lass",
+          "pokemon": ["Zigzagoon"]
+        }
+      ],
+      "items": [
+        "ITEM_POTION",
+        "ITEM_POKEBALL"
+      ],
+      "wild_pokemon": true,
+      "encounters": {
+        "grass": [
+          {"species": "Pidgey", "levels": [2, 4], "rate": 50},
+          {"species": "Rattata", "levels": [2, 4], "rate": 30},
+          {"species": "Zigzagoon", "levels": [3, 5], "rate": 15},
+          {"species": "Taillow", "levels": [3, 5], "rate": 5}
+        ]
+      },
+      "connections": [
+        {
+          "direction": "west",
+          "to": "LOC_VENNESLA_BY",
+          "distance": 200
+        },
+        {
+          "direction": "east",
+          "to": "LOC_GROVANE_SKOG",
+          "distance": 1000
+        }
+      ],
+      "music": "MUS_ROUTE101",
+      "weather": "WEATHER_SUNNY"
+    },
+    {
+      "id": "LOC_HUNSFOSS",
+      "name": "Hunsfoss",
+      "name_no": "Hunsfoss",
+      "type": "town",
+      "subtype": "industrial_town",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2900,
+          "lon": 7.9400
+        },
+        "game_world": {
+          "map_id": "MAP_HUNSFOSS_TOWN",
+          "x": 5,
+          "y": 15
+        }
+      },
+      "description": "Et industriområde vest for Vennesla. Kjent for sitt stålverk og industrielle atmosfære. Gym #2 ligger her.",
+      "features": [
+        "pokecenter",
+        "pokemart",
+        "gym",
+        "factory",
+        "warehouse"
+      ],
+      "npcs": [
+        "NPC_NURSE_JOY",
+        "NPC_MART_CLERK",
+        "NPC_GYM_LEADER_BJORN",
+        "NPC_FACTORY_WORKER"
+      ],
+      "gym": {
+        "number": 2,
+        "leader": "Bjørn",
+        "type": "Steel",
+        "badge": "Steel Badge"
+      },
+      "wild_pokemon": false,
+      "connections": [
+        {
+          "direction": "east",
+          "to": "LOC_VENNESLA_BY",
+          "distance": 3000
+        },
+        {
+          "direction": "north",
+          "to": "LOC_ROUTE_2",
+          "distance": 500
+        }
+      ],
+      "music": "MUS_RUSTBORO",
+      "weather": "WEATHER_RAIN"
+    },
+    {
+      "id": "LOC_GROVANE_SKOG",
+      "name": "Grovane Forest",
+      "name_no": "Grovane Skog",
+      "type": "forest",
+      "subtype": "dense_forest",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2800,
+          "lon": 8.0000
+        },
+        "game_world": {
+          "map_id": "MAP_GROVANE_FOREST",
+          "x": 35,
+          "y": 15
+        }
+      },
+      "description": "En tett skog øst for Vennesla. Hjemsted for mange Bug og Grass-type Pokémon. Mystiske stier og skjulte områder venter på å bli oppdaget.",
+      "features": [
+        "tall_grass",
+        "trees",
+        "hidden_items",
+        "trainers"
+      ],
+      "trainers": [
+        {
+          "name": "Insektfanger Tom",
+          "class": "Bug Catcher",
+          "pokemon": ["Wurmple", "Wurmple"]
+        }
+      ],
+      "items": [
+        "ITEM_ANTIDOTE",
+        "ITEM_POKEBALL",
+        "ITEM_HIDDEN_POTION"
+      ],
+      "wild_pokemon": true,
+      "encounters": {
+        "grass": [
+          {"species": "Wurmple", "levels": [5, 7], "rate": 30},
+          {"species": "Poochyena", "levels": [5, 7], "rate": 25},
+          {"species": "Seedot", "levels": [5, 8], "rate": 20},
+          {"species": "Shroomish", "levels": [6, 8], "rate": 15},
+          {"species": "Slakoth", "levels": [7, 9], "rate": 10}
+        ]
+      },
+      "connections": [
+        {
+          "direction": "west",
+          "to": "LOC_ROUTE_1",
+          "distance": 1000
+        },
+        {
+          "direction": "east",
+          "to": "LOC_OVREBØ",
+          "distance": 2000
+        }
+      ],
+      "music": "MUS_PETALBURG_WOODS",
+      "weather": "WEATHER_RAIN"
+    },
+    {
+      "id": "LOC_OVREBØ",
+      "name": "Øvrebø",
+      "name_no": "Øvrebø",
+      "type": "town",
+      "subtype": "rural_village",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.3000,
+          "lon": 8.0200
+        },
+        "game_world": {
+          "map_id": "MAP_OVREBØ_VILLAGE",
+          "x": 45,
+          "y": 10
+        }
+      },
+      "description": "En fredelig landsby nord for Vennesla. Kjent for sine gårder og landlige atmosfære. Mange Normal og Flying-type Pokémon lever her.",
+      "features": [
+        "pokecenter",
+        "farms",
+        "barn",
+        "fields"
+      ],
+      "npcs": [
+        "NPC_NURSE_JOY",
+        "NPC_FARMER",
+        "NPC_BREEDER"
+      ],
+      "wild_pokemon": false,
+      "connections": [
+        {
+          "direction": "west",
+          "to": "LOC_GROVANE_SKOG",
+          "distance": 2000
+        },
+        {
+          "direction": "south",
+          "to": "LOC_ROUTE_3",
+          "distance": 1500
+        }
+      ],
+      "music": "MUS_VERDANTURF",
+      "weather": "WEATHER_SUNNY"
+    },
+    {
+      "id": "LOC_OTRA_RIVER",
+      "name": "Otra River",
+      "name_no": "Otra Elv",
+      "type": "water_route",
+      "subtype": "river",
+      "coordinates": {
+        "real_world": {
+          "lat": 58.2700,
+          "lon": 7.9500
+        },
+        "game_world": {
+          "map_id": "MAP_OTRA_RIVER",
+          "x": 15,
+          "y": 20
+        }
+      },
+      "description": "Den mektige Otra-elven som renner gjennom Vennesla-området. Rik på Water-type Pokémon. Fiske og surfing er populære aktiviteter her.",
+      "features": [
+        "water",
+        "fishing_spots",
+        "surf_required",
+        "bridges"
+      ],
+      "items": [
+        "ITEM_SUPER_ROD",
+        "ITEM_WATER_STONE"
+      ],
+      "wild_pokemon": true,
+      "encounters": {
+        "surf": [
+          {"species": "Tentacool", "levels": [15, 20], "rate": 60},
+          {"species": "Wingull", "levels": [15, 20], "rate": 30},
+          {"species": "Pelipper", "levels": [20, 25], "rate": 10}
+        ],
+        "fishing": {
+          "old_rod": [
+            {"species": "Magikarp", "levels": [5, 10], "rate": 70},
+            {"species": "Tentacool", "levels": [5, 10], "rate": 30}
+          ],
+          "good_rod": [
+            {"species": "Magikarp", "levels": [10, 30], "rate": 60},
+            {"species": "Tentacool", "levels": [10, 30], "rate": 20},
+            {"species": "Corphish", "levels": [10, 30], "rate": 20}
+          ],
+          "super_rod": [
+            {"species": "Corphish", "levels": [20, 45], "rate": 40},
+            {"species": "Gyarados", "levels": [30, 45], "rate": 40},
+            {"species": "Wailmer", "levels": [25, 45], "rate": 20}
+          ]
+        }
+      },
+      "connections": [
+        {
+          "direction": "north",
+          "to": "LOC_VENNESLA_BY",
+          "distance": 800
+        },
+        {
+          "direction": "south",
+          "to": "LOC_KILEFJORDEN",
+          "distance": 5000
+        }
+      ],
+      "music": "MUS_ROUTE110",
+      "weather": "WEATHER_RAIN"
+    }
+  ],
+  "metadata": {
+    "total_locations": 7,
+    "towns": 4,
+    "routes": 1,
+    "special_areas": 2,
+    "gyms": 2
+  }
+}

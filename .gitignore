@@ -1,0 +1,108 @@
+# Build artifacts
+*.o
+*.elf
+*.map
+*.gba
+*.sav
+*.ss*
+build/
+*.d
+*.i
+*.s
+
+# ROM files (never commit ROMs)
+*.gba
+*.gb
+*.gbc
+*.nds
+*.ips
+*.ups
+*.bps
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.cproject
+.settings/
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+*.cache
+.temp/
+temp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Node.js (hvis brukt for verktøy)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Backup files
+*.backup
+backups/
+
+# Personal notes
+notes.txt
+TODO.txt
+PERSONAL.md
+
+# Sensitive data
+secrets/
+*.key
+*.pem
+.env
+
+# Large asset files (use Git LFS if needed)
+*.psd
+*.xcf
+*.wav
+*.mp3
+*.ogg
+
+# DevkitARM
+*.a
+
+# Emulator save states
+*.sgm
+*.ss0
+*.ss1
+*.ss2
+*.ss3
+*.ss4
+*.ss5
+*.ss6
+*.ss7
+*.ss8
+*.ss9
+
+# Porymap temp files
+.porymap/
+*.porymap.bak
